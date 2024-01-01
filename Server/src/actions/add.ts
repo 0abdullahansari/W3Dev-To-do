@@ -9,12 +9,11 @@ export const addTask = async (
     const sessionToken = req.cookies['W3DEVTODO'];
 
     const user = await getUserBySessionToken(sessionToken);
-
     user.tasks.push(req.body.newtask);
 
     await user.save();
 
-    return res.status(200);
+    return res.status(200).json();
   } catch (error) {
     console.log(error);
     return res.sendStatus(400);

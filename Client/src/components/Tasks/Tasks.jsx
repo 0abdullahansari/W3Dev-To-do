@@ -8,53 +8,22 @@ import { v4 } from "uuid";
 const Tasks = () => {
   const { state, dispatch } = useStateValue();
   const [taskContent, setTaskContent] = useState("");
-  // useEffect(() => {
-  //   const update = async () => {
-  //     const response = await axios.patch("http://localhost:8080/update", {
-  //       email: state.email,
-  //       tasks: state.tasks,
-  //     });
-  //   };
-  //   update();
-  // }, [state.tasks]);
-
-  // const addTask = async () => {
-  //   console.log(state);
-  //   const id = v4();
-  //   await axios.patch(
-  //     "http://localhost:8080/update/add",
-  //     {
-  //       newtask: {
-  //         id: id,
-  //         content: taskContent,
-  //         pending: true,
-  //       },
-  //     },
-  //     {
-  //       withCredentials: true,
-  //       credentials: "include",
-  //     }
-  //   )
-
-
-  //   dispatch({
-  //     type: "ADD_TASK",
-  //     id: id,
-  //     content: taskContent,
-  //   })
-  //   setTaskContent("");
-  // };
 
   const addTask = async () => {
     try {
-      console.log(state);
+      const taskMinified = taskContent.trim().replace(/\s+/g, " ");
+
+      if (taskMinified === "") {
+        alert("Task cannot be empty!!");
+        return;
+      }
       const id = v4();
       const response = await axios.patch(
         "http://localhost:8080/update/add",
         {
           newtask: {
             id: id,
-            content: taskContent,
+            content: taskMinified,
             pending: true,
           },
         },
@@ -63,19 +32,19 @@ const Tasks = () => {
           credentials: "include",
         }
       );
-  
-      dispatch({
-        type: "ADD_TASK",
-        id: id,
-        content: taskContent,
-      });
-  
+      if (response.status === 200) {
+        console.log("dispatching add");
+        dispatch({
+          type: "ADD_TASK",
+          id: id,
+          content: taskMinified,
+        });
+      }
       setTaskContent("");
     } catch (error) {
       console.error("Error adding task:", error);
     }
   };
-  
 
   const renderTasks = (pending) =>
     state.tasks

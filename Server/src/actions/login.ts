@@ -26,7 +26,7 @@ export const login = async (req: express.Request, res: express.Response) => {
     );
 
     if (user.authentication.password != expectedHash) {
-      return res.sendStatus(403);
+      return res.status(403).json({message : "Wrong credentials!"});
     }
 
     const salt = random();

@@ -16,7 +16,7 @@ export const deleteTask = async (
 
     await user.save();
 
-    return res.status(200);
+    return res.status(200).json();
   } catch (error) {
     console.log(error);
     return res.sendStatus(400);

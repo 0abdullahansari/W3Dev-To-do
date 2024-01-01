@@ -10,24 +10,23 @@ const Signin = () => {
   const { state, dispatch } = useStateValue();
   
   const handleLogin = async () => {
-    const response = await axios.post('http://localhost:8080/auth/login', { 
+    try {
+      const response = await axios.post('http://localhost:8080/auth/login', { 
         email : email,
         password : password,
     },{
       withCredentials: true,
       credentials: 'include'
     }
-    ).then(res=>res?.data)
-    console.log(response);
-
-    console.log('Login handler')
-
+    )
     dispatch({
       type: 'SIGN_IN',
       email: email,
-      tasks: response
+      tasks: response.data,
     })
-    console.log(state);
+    } catch(error) {
+      alert(error.response.data.message);
+    }
   };
 
   const handleRegister = async () => {

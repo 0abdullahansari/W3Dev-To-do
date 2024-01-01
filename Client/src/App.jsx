@@ -43,7 +43,7 @@ import Loading from "./components/Loading/Loading";
 import { useStateValue } from "./StateProvider";
 
 function App() {
-  const [processing, setProcessing] = useState(true);
+  const [processing, setProcessing] = useState(false);
   // const [loading,setIsLoading] = useState(false);
   // const [user, setUser] = useState(null);
   const {state, dispatch} = useStateValue();
@@ -66,6 +66,8 @@ function App() {
 
   useEffect(() => {
     const initial = async () => {
+      console.log('UE running')
+      console.log(processing);
       const getData = await axios
         .get("http://localhost:8080", {
           withCredentials: true,
