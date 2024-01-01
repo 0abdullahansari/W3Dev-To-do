@@ -1,0 +1,102 @@
+.Task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.task-content {
+  display: flex;
+  align-items: left;
+}
+
+.task-checkbox {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.completed-task {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.delete-button {
+  background-color: #ff3333;
+  color: white;
+  border: none;
+  padding: 5px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.delete-button:hover {
+  background-color: #cc0000;
+}
+
+/* .Task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+}
+
+.task-checkbox {
+  margin-right: 10px;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+} */
+
+/* Add more styling as needed */
+
+/* .Task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+}
+
+.task-checkbox {
+  margin-right: 10px;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+} */
+
+/* Add more styling as needed */
+
+
