@@ -5,11 +5,10 @@ import jwt from 'jsonwebtoken';
 
 export const login = async (req: express.Request, res: express.Response) => {
   try {
-    console.log('logging in');
     const { email, password } = req.body;
 
     if (!email || !password) {
-      return res.sendStatus(400);
+      return res.status(400).json({message: 'Fill in both fields'});
     }
 
     const user = await getUserByEmail(email).select(
@@ -17,7 +16,7 @@ export const login = async (req: express.Request, res: express.Response) => {
     );
 
     if (!user) {
-      return res.sendStatus(400);
+      return res.status(400).json({message: 'User does not exist'});
     }
 
     const expectedHash = authentication(

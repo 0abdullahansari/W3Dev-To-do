@@ -1,18 +1,23 @@
 import React, { createContext, useContext, useReducer } from 'react';
 
-// Define the initial state
 export const initialState = {
   email: null,
   tasks: [],
 };
 
-// Define the reducer function
 export const reducer = (state, action) => {
   switch (action.type) {
     case 'SIGN_IN':
       return {
         ...state,email:action.email,tasks:action.tasks
       };
+
+      case 'LOGOUT':
+        return{
+          email:null,
+          tasks:null,
+        }
+
     case 'INITIAL':
       return {
         ...state,
@@ -49,7 +54,8 @@ export const reducer = (state, action) => {
     case 'SET_EMAIL':
       return {
         ...state,
-        email:action.email,
+        email: action.email,
+        tasks: []
       };  
 
     default:
@@ -57,10 +63,8 @@ export const reducer = (state, action) => {
   }
 };
 
-// Create the context
 const StateContext = createContext();
 
-// Create the StateProvider component
 export const StateProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 

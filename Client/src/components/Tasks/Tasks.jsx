@@ -4,7 +4,7 @@ import "./Tasks.css";
 import { useStateValue } from "../../StateProvider";
 import axios from "axios";
 import { v4 } from "uuid";
-
+import Logout from '../Logout/Logut';
 const Tasks = () => {
   const { state, dispatch } = useStateValue();
   const [taskContent, setTaskContent] = useState("");
@@ -33,7 +33,6 @@ const Tasks = () => {
         }
       );
       if (response.status === 200) {
-        console.log("dispatching add");
         dispatch({
           type: "ADD_TASK",
           id: id,
@@ -82,6 +81,7 @@ const Tasks = () => {
         <button type="button" onClick={addTask} className="task-button">
           ADD
         </button>
+        <Logout/>
       </div>
     </div>
   );
