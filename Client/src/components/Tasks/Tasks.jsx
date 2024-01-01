@@ -55,8 +55,10 @@ const Tasks = () => {
       ));
 
   return (
-    <div className="Tasks">
-      <h1>To-do's</h1>
+    <div className='flex min-h-screen items-center justify-center'>
+      <div className='max-w-xl rounded-lg border p-6 shadow-sm'>
+
+      <div className='mb-8 flex flex-col'><h1 className='text-2xl font-semibold tracking-tight'>To-do's</h1></div>
       <div>
         <h2>
           Pending: {state.tasks.filter((task) => task.pending === true).length}
@@ -72,17 +74,20 @@ const Tasks = () => {
       </div>
       <div>
         <input
-          type="text"
+          className='w-full rounded-md border px-3 py-2 text-sm focus-visible:outline-none'
+          id='add'
+          required=''
+          type='text'
           value={taskContent}
           onChange={(e) => setTaskContent(e.target.value)}
-          className="task-input"
           placeholder="Add a new task..."
-        />
-        <button type="button" onClick={addTask} className="task-button">
+          />
+        <button type="button" onClick={addTask} className='h-9 w-36 rounded-md bg-black text-sm font-medium text-white'>
           ADD
         </button>
         <Logout/>
       </div>
+          </div>
     </div>
   );
 };

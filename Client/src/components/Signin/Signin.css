@@ -1,4 +1,4 @@
-.login-container {
+/* .login-container {
     max-width: 400px;
     margin: auto;
     padding: 20px;
@@ -11,7 +11,6 @@
   .Tasks {
     max-width: 600px;
     margin: 0 auto;
-    /* text-align: center; */
   }
 
   .login-form {
@@ -34,7 +33,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    width: 100%; /* Make sure the input takes the full width of its container */
+    width: 100%; 
   }
   
   .button-container {
@@ -56,4 +55,4 @@
   button:hover {
     background-color: #2980b9;
   }
-  
+   */

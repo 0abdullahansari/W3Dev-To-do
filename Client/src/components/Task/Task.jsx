@@ -53,17 +53,18 @@ const Task = ({ it }) => {
   };
 
   return (
-    <div className="Task">
-      <div className="task-content">
+    <div className='mb-8 flex flex-row items-center'>
+      <div className='mr-4 flex min-w-[232px] flex-row items-center truncate rounded-md border px-3 py-2'>
         <input
-          type="checkbox"
+          type='checkbox'
+          className='form-checkbox mr-4 h-[14px] w-[14px] text-blue-500'
           checked={!it.pending}
           onChange={handleToggle}
-          className="task-checkbox"
+          
         />
-        <h4 className={it.pending ? "" : "completed-task"}>{it.content}</h4>
+        <h4 className='font-regular mr-4 truncate text-[15px]'>{it.content}</h4>
       </div>
-      <button className="delete-button" type="button" onClick={handleDelete}>
+      <button className='min-h-9 min-w-24 rounded-md bg-black text-sm font-medium text-white' type="button" onClick={handleDelete}>
         Delete
       </button>
     </div>

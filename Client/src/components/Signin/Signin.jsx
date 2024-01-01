@@ -55,32 +55,58 @@ const Signin = () => {
 
   return (
     <>
-      <div className="Tasks">
-        <h1>To-do's</h1>
-        <div className="login-container">
-          <h2 className="center">Login or Register</h2>
-          <form className="login-form">
-            <label>
-              Email:
+      <div className="flex min-h-screen items-center justify-center">
+        <div className="rounded-lg border p-6 shadow-sm">
+          <h1>To-do's</h1>
+          <div className="mb-8 flex flex-col">
+            <h2 className="text-2xl font-semibold tracking-tight">
+              Login Or Register
+            </h2>
+          </div>
+          <form className="mb-8 flex flex-col gap-y-4">
+            <div className="space-y-2">
+              {" "}
+              <label
+                className="text-sm font-medium leading-none"
+                htmlFor="email"
+              >
+                Email:
+              </label>
               <input
-                type="text"
+                className="w-full rounded-md border px-3 py-2 text-sm focus-visible:outline-none"
+                id="email"
+                placeholder="Email"
+                required=""
+                type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-              />
-            </label>
-            <label>
-              Password:
+              />{" "}
+            </div>
+            <label>Password</label>
+            <div>
               <input
+                className="w-full rounded-md border px-3 py-2 text-sm focus-visible:outline-none"
+                id="password"
+                placeholder="Password"
+                required=""
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-            </label>
-            <div className="button-container">
-              <button type="button" onClick={handleLogin}>
+            </div>
+            <div className="mt-8 flex flex-row gap-x-4">
+              <button
+                className="rounded-md bg-black px-9 py-2 text-sm font-medium text-white"
+                type="button"
+                onClick={handleLogin}
+              >
                 Login
               </button>
-              <button type="button" onClick={handleRegister}>
+              <button
+                className="rounded-md bg-black px-9 py-2 text-sm font-medium text-white"
+                type="button"
+                onClick={handleRegister}
+              >
                 Register
               </button>
             </div>
