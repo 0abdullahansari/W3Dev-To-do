@@ -4,8 +4,6 @@ WORKDIR /usr/src/app
 
 COPY ./src ./src
 
-COPY ./.env ./env
-
 COPY ./nodemon.json ./nodemon.json
 
 COPY package*.json ./
