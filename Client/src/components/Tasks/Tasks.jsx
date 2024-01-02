@@ -85,8 +85,8 @@ const Tasks = () => {
         <button type="button" onClick={addTask} className='h-9 w-36 rounded-md bg-black text-sm font-medium text-white'>
           ADD
         </button>
-        <Logout/>
       </div>
+        <Logout/>
           </div>
     </div>
   );

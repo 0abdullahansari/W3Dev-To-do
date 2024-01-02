@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Signin.css";
 import axios from "axios";
 import { useStateValue } from "../../StateProvider";
+import logo from '../../assets/favicon.ico'
 
 const Signin = () => {
   const [email, setEmail] = useState("");
@@ -57,7 +58,7 @@ const Signin = () => {
     <>
       <div className="flex min-h-screen items-center justify-center">
         <div className="rounded-lg border p-6 shadow-sm">
-          <h1>To-do's</h1>
+          <h1><img src={logo} alt="" />To-do's</h1>
           <div className="mb-8 flex flex-col">
             <h2 className="text-2xl font-semibold tracking-tight">
               Login Or Register
