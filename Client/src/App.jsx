@@ -11,18 +11,15 @@ function App() {
 
   useEffect(() => {
     const initial = async () => {
-      console.log('UE running')
       const getData = await axios
         .get("http://localhost:8080", {
           withCredentials: true,
           credentials: 'include',
         })
         .then((res) => res?.data);
-        console.log("data : ", getData);
       setProcessing(false);
       if (getData)
       {
-        console.log("UE dispatch running");
         dispatch({
           type: "INITIAL",
           state: getData,
