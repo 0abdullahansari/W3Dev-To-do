@@ -1,0 +1,28 @@
+services:
+  reactfrontend:
+    build:
+      context: ./Client
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    depends_on:
+      - db
+  nodebackend:
+    build:
+      context: ./Server
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+  db:
+    environment:
+      - MONGO_URI=mongodb+srv://0abdullahansari:AaEO1T2q3loMzJs7@to-do.wpi1wer.mongodb.net/?retryWrites=true&w=majority
+    volumes:
+      - todo_db:/data/db
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+
+volumes:
+  todo_db:

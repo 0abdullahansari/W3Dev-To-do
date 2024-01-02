@@ -10,7 +10,7 @@ import dotenv from 'dotenv';
 const app = express();
 dotenv.config();
 
-app.use(cors({credentials: true,origin:process.env.ORIGIN}));
+app.use(cors({credentials: true,origin:'http://localhost:5173'}));
 
 app.use(compression());
 app.use(cookieParser());
@@ -18,11 +18,11 @@ app.use(bodyParser.json());
 
 const server = http.createServer(app);
 
-server.listen(process.env.PORT, ()=>{
+server.listen(8080, ()=>{
     console.log('Running')
 })
 
-const MONGO_URL = process.env.DB_URL;
+const MONGO_URL = 'mongodb+srv://0abdullahansari:AaEO1T2q3loMzJs7@to-do.wpi1wer.mongodb.net/?retryWrites=true&w=majority';
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGO_URL);
