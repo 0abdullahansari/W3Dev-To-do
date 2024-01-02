@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import Tasks from "./components/Tasks/Tasks";
 import Signin from "./components/Signin/Signin";
 import axios from "axios";
@@ -13,7 +12,6 @@ function App() {
   useEffect(() => {
     const initial = async () => {
       console.log('UE running')
-      // console.log(processing);
       const getData = await axios
         .get("http://localhost:8080", {
           withCredentials: true,

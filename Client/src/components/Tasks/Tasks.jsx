@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Task from "../Task/Task";
-import "./Tasks.css";
 import { useStateValue } from "../../StateProvider";
 import axios from "axios";
 import { v4 } from "uuid";

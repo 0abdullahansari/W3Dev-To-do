@@ -1,5 +1,4 @@
 import React from "react";
-import "./Task.css";
 import { useStateValue } from "../../StateProvider";
 import axios from "axios";
 
