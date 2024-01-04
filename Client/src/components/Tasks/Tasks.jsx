@@ -44,6 +44,12 @@ const Tasks = () => {
 		}
 	};
 
+	const handleKeyPress = (e) => {
+		if (e.key === 'Enter') {
+		  addTask();
+		}
+	  };
+
 	const renderTasks = (pending) =>
 		state.tasks
 			.filter((task) => task.pending === pending)
@@ -77,7 +83,9 @@ const Tasks = () => {
 						type='text'
 						value={taskContent}
 						onChange={(e) => setTaskContent(e.target.value)}
+						onKeyPress={handleKeyPress}
 						placeholder='Add a new task...'
+						autoComplete='off'
 					/>
 				</div>
 				<div className='mt-4 flex justify-between gap-x-4'>
