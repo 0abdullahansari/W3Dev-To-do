@@ -5,6 +5,7 @@ A simple ToDo list project to help you stay organized and manage your tasks effi
 ## Features
 
 - Login/Register
+- Persistent login sessions using ccokies.
 - Add task
 - Delete task
 - Mark Complete
